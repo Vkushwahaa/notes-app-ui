@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class liststack extends StatefulWidget {
-  String formatTimestamp(DateTime dateTime) {
-    return 'Timestamp: ${dateTime.toString()}';
-  }
+  // String formatTimestamp(DateTime dateTime) {
+  //   return 'Timestamp: ${dateTime.toString()}';
+  // }
 
-  // late String? text;
-  // liststack({Key? key, required this.text}) : super(key: key);
+  late String text;
+  liststack({Key? key, required this.text}) : super(key: key);
 
   @override
   State<liststack> createState() => _listState();
@@ -18,6 +18,7 @@ class _listState extends State<liststack> {
   Widget build(BuildContext context) {
     return Card(
       elevation: 4,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
       child: ListTile(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30),
@@ -28,7 +29,7 @@ class _listState extends State<liststack> {
             size: MediaQuery.of(context).size.height * 0.02,
           ),
           title: Text(
-            "my engeening",
+            widget.text,
             style: GoogleFonts.poppins(
                 fontSize: MediaQuery.of(context).size.height * 0.03),
           ),
